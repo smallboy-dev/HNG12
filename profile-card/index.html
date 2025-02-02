@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <title>Jephthah Festus Profile Card</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <div class="card__border">
+          <img
+            src="assets/img/ui.jpeg"
+            alt="card image"
+            class="card__img"
+            data-testid="profilePicture"
+          />
+        </div>
+
+        <h3 class="card__name" data-testid="fullName">Jephthah Festus</h3>
+        <span class="card__profession" data-testid="jobTitle"
+          >Software Developer</span
+        >
+        <p class="card__bio" data-testid="shortBio" style="text-align: justify;color: rgb(199, 186, 186);">
+          A passionate software developer with expertise in building web and
+          mobile applications. Proficient in JavaScript, Python, and modern
+          frameworks, he focuses on creating responsive and efficient solutions.
+          With a problem-solving mindset and attention to detail, he optimizes
+          code for performance and scalability. Always eager to learn, he stays
+          updated with industry trends and collaborates to develop innovative
+          products. A strong team player with excellent communication skills, he
+          thrives in dynamic environments, delivering solutions that enhance
+          user experience and drive growth. Dedicated to turning ideas into
+          impactful digital products, he brings creativity and precision to
+          every project.
+        </p>
+        <p class="card__location" data-testid="currentLocation"style="text-align: center;color: rgb(199, 186, 186);">
+          Lagos, Nigeria
+        </p>
+        <p class="card__email" data-testid="emailAddress"style="text-align: center;color: rgb(199, 186, 186);">
+          Email: Festusjephthah@gmail.com
+        </p>
+
+        <div class="card__social" id="card-social">
+          <div class="card__social-control">
+            <!-- Toggle button -->
+            <div class="card__social-toggle" id="card-toggle">
+              <i class="ri-add-line"></i>
+            </div>
+
+            <span class="card__social-text">Connect with me</span>
+
+            <!-- Card social -->
+            <ul class="card__social-list"data-testid="socialLinks">
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                class="card__social-link"
+              >
+                <i class="ri-facebook-line"></i>
+              </a>
+
+              <a
+                href="https://www.instagram.com/ateyou.x"
+                target="_blank"
+                class="card__social-link"
+              >
+                <i class="ri-instagram-line"></i>
+              </a>
+
+              <a
+                href="https://twitter.com/jephthahfestus"
+                target="_blank"
+                class="card__social-link"
+              >
+                <i class="ri-twitter-line"></i>
+              </a>
+            </ul>
+          </div>
+        </div>
+        <p class="utc-time" data-testid="currentTimeUTC"style="text-align: center;color: rgb(199, 186, 186);"></p>
+      </div>
+    </div>
+
+    <!--=============== MAIN JS ===============-->
+    <script>
+          function updateTime() {
+            const utcTimeElement = document.querySelector(".utc-time");
+            setInterval(() => {
+                const now = new Date();
+                const options = { timeZone: "Africa/Lagos", hour12: true, hour: "2-digit", minute: "2-digit" };
+                const nigeriaTime = new Intl.DateTimeFormat("en-GB", options).format(now);
+                utcTimeElement.textContent = `  ${nigeriaTime}`;
+            }, 1000);
+        }
+        updateTime();
+    </script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
