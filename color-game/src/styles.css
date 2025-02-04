@@ -1,0 +1,115 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Main Container */
+.container {
+  background: rgb(167, 159, 159);
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Color Box */
+.color-box {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  border-radius: 10px;
+  border: 3px solid #ccc;
+}
+
+/* Instructions */
+.instructions {
+  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Color Options */
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.color-button {
+  width: 100px;
+  height: 100px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Game Status */
+.game-status {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Score */
+.score {
+  font-size: 28px;
+  font-weight: bold;
+  color: #000000;
+  margin-left:200px;
+}
+
+/* New Game Button */
+.new-game-button {
+  background-color: #193833;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.new-game-button:hover {
+  background-color: #323335;
+  transform: scale(1.05);
+}
+
+@keyframes correctAnswer {
+  0% { transform: scale(1); color: #28a745; }
+  50% { transform: scale(1.2); color: #4caf50; }
+  100% { transform: scale(1); color: #28a745; }
+}
+
+@keyframes wrongAnswer {
+  0% { transform: translateX(0); color: #dc3545; }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); color: #dc3545; }
+}
+
+.correct {
+  animation: correctAnswer 0.5s ease-in-out;
+}
+
+.wrong {
+  animation: wrongAnswer 0.5s ease-in-out;
+}
